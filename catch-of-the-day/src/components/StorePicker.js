@@ -4,23 +4,17 @@ import { getFunName } from '../helpers';
 export class StorePicker extends React.Component {
   myInput = React.createRef();
 
-  constructor() {
-    super();
-    // New custom methods like goToStore() is not being mounted by default,
-    // so it can't reach this.goToStore until it is bound
-    // Binding method to a component:
-    this.goToStore = this.goToStore.bind(this);
-  }
-
-  goToStore(event) {
+  goToStore = event => {
     // 1. Stop the from for submitting:
     event.preventDefault();
     // 2. Get the text from the input
-    console.log(this);
-    
+    const storeName = this.myInput.current.value;
     // 3. Change the page to /store/whatever-inputted
+    // this.history stores all component's history and
+    // push is used to redirect to another route
+    this.props.history.push(`/store/${storeName}`);
+  };
 
-  }
   render() {
     return (
       <form className="store-selector" onSubmit={this.goToStore}>
@@ -28,7 +22,7 @@ export class StorePicker extends React.Component {
         <h2>Please enter the store</h2>
         <input
           type="text"
-          ref={()}
+          ref={this.myInput}
           required
           placeholder="Store name"
           defaultValue={getFunName()}
