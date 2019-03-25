@@ -20,14 +20,8 @@ export class StorePicker extends React.Component {
       <form className="store-selector" onSubmit={this.goToStore}>
         {/* This is a Store picker */}
         <h2>Please enter the store</h2>
-        <input
-          type="text"
-          ref={this.myInput}
-          required
-          placeholder="Store name"
-          defaultValue={getFunName()}
-        />
-        <button type="Submit"> Visit Store →</button>
+        <input type="text" ref={this.myInput} required placeholder="Store name" defaultValue={getFunName()} />
+        <button type="submit"> Visit Store →</button>
       </form>
     );
   }
