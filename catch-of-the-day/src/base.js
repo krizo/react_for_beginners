@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 const fireBaseApp = firebase.initializeApp({
-  apiKey: 'AIzaSyCVlG9fxHpSwW8TkXzQ5aGB5Y6sN6wVAJo',
+  apiKey: 'FireBaseAPIKey',
   authDomain: 'react-for-beginners-bfd6e.firebaseapp.com',
   databaseURL: 'https://react-for-beginners-bfd6e.firebaseio.com',
 });
